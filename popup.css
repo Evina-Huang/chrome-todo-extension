@@ -547,49 +547,26 @@ h1 {
 
 /* New tab: match the selected "极简便签墙" concept mockup. */
 body.newtab-page {
-  display: grid;
+  display: block;
   min-height: 100vh;
-  place-items: center;
-  background: #000000;
+  background: #eee8dc;
 }
 
 .newtab-app {
   position: relative;
-  width: calc(100vw - 72px);
-  height: calc(100vh - 72px);
-  min-height: 560px;
+  width: 100vw;
+  min-height: 100vh;
   margin: 0;
-  border-radius: 34px;
+  border-radius: 0;
   background:
     radial-gradient(circle at 18% 16%, rgba(80, 70, 52, 0.07) 0 1px, transparent 2px),
     radial-gradient(circle at 74% 28%, rgba(80, 70, 52, 0.055) 0 1px, transparent 2px),
     radial-gradient(circle at 44% 78%, rgba(80, 70, 52, 0.04) 0 1px, transparent 2px),
     linear-gradient(135deg, rgba(255, 255, 255, 0.48), transparent 34%),
     #eee8dc;
-  box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.36),
-    0 24px 80px rgba(0, 0, 0, 0.36);
-  overflow: hidden;
+  box-shadow: none;
+  overflow: auto;
   padding: 0 40px 30px;
-}
-
-.newtab-app::after {
-  content: "×";
-  position: absolute;
-  top: 16px;
-  right: 12px;
-  display: grid;
-  width: 82px;
-  height: 82px;
-  place-items: center;
-  border: 1px solid rgba(46, 42, 36, 0.14);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 4px 16px rgba(38, 31, 21, 0.16);
-  color: #181613;
-  font-size: 44px;
-  font-weight: 300;
-  line-height: 1;
 }
 
 .newtab-app .header {
@@ -1005,16 +982,10 @@ body.newtab-page {
 
 @media (max-width: 900px) {
   .newtab-app {
-    width: calc(100vw - 28px);
-    min-height: calc(100vh - 28px);
-    border-radius: 26px;
+    width: 100vw;
+    min-height: 100vh;
+    border-radius: 0;
     padding: 0 22px 26px;
-  }
-
-  .newtab-app::after {
-    width: 58px;
-    height: 58px;
-    font-size: 34px;
   }
 
   .newtab-app .header {

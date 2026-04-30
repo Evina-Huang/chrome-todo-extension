@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="todo logo">
+  <rect width="512" height="512" fill="none"/>
+  <rect x="58" y="50" width="396" height="410" rx="54" fill="#f3eee4"/>
+  <rect x="58" y="50" width="396" height="410" rx="54" fill="none" stroke="#d9d1c2" stroke-width="10"/>
+  <path d="M368 460 L454 374 L454 460 Z" fill="#e0d8ca"/>
+  <path d="M372 456 L454 374" fill="none" stroke="#d1c7b7" stroke-width="8" stroke-linecap="round"/>
+  <rect x="126" y="142" width="78" height="78" rx="14" fill="#fbfaf5" stroke="#6f675d" stroke-width="12"/>
+  <path d="M145 180 L164 199 L204 154" fill="none" stroke="#282521" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="316" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Rounded', Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="0" fill="#282521">todo</text>
+  <path d="M142 354 H370" stroke="#9b9183" stroke-width="10" stroke-linecap="round" opacity="0.5"/>
+  <path d="M142 386 H324" stroke="#9b9183" stroke-width="10" stroke-linecap="round" opacity="0.32"/>
+</svg>

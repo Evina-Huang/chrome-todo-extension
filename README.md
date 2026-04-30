@@ -1,4 +1,4 @@
-# 简洁待办 Chrome 扩展 / Minimal Todo Chrome Extension
+# todo Chrome 扩展 / todo Chrome Extension
 
 一个打开就能用的待办事项小工具，风格是极简便签墙。
 
