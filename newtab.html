@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="popup.css" />
   </head>
   <body class="newtab-page">
-    <main class="app newtab-app" aria-label="待办事项">
+    <main class="app newtab-app" aria-label="便签墙">
       <header class="header">
         <div>
-          <h1>今日待办</h1>
+          <p class="quote">心里装着阳光，</p>
+          <p class="quote-sub">就不惧前路的风雨，向阳而生，日子总会温柔明亮。</p>
           <p id="todayText" class="today"></p>
         </div>
       </header>
@@ -30,12 +31,12 @@
         <button class="filter" type="button" data-filter="done">已完成</button>
       </section>
 
-      <section class="category-toolbar" aria-label="筛选分类">
+      <section class="category-toolbar board-hidden" aria-label="筛选分类">
         <button class="category-filter active" type="button" data-category="all">全部分类</button>
       </section>
 
       <section class="content">
-        <p id="emptyState" class="empty-state">还没有待办。先写下一件最重要的小事。</p>
+        <p id="emptyState" class="empty-state">还没有便签。先贴上一张小纸条。</p>
         <ul id="todoList" class="todo-list" aria-live="polite"></ul>
       </section>
 
