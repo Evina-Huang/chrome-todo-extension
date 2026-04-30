@@ -9,29 +9,41 @@
   <body>
     <main class="app" aria-label="待办事项">
       <header class="header">
-        <div>
+        <div class="header-copy">
+          <span class="eyebrow">Task Deck</span>
           <h1>待办事项</h1>
           <p id="todayText" class="today"></p>
         </div>
+        <div class="deck-meter" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </header>
 
-      <form id="todoForm" class="add-form" autocomplete="off">
-        <label class="sr-only" for="todoInput">新增待办</label>
-        <input id="todoInput" type="text" maxlength="80" placeholder="添加一件要做的事" />
-        <label class="sr-only" for="categoryInput">分类</label>
-        <input id="categoryInput" type="text" maxlength="18" placeholder="分类（可不填）" list="categorySuggestions" />
-        <datalist id="categorySuggestions"></datalist>
+      <form id="todoForm" class="add-form" autocomplete="off" aria-label="新增待办">
+        <div class="task-field">
+          <label for="todoInput">新增待办</label>
+          <input id="todoInput" type="text" maxlength="80" placeholder="输入任务" />
+        </div>
+        <div class="category-field">
+          <label for="categoryInput">分类</label>
+          <input id="categoryInput" type="text" maxlength="18" placeholder="标签" list="categorySuggestions" />
+          <datalist id="categorySuggestions"></datalist>
+        </div>
         <button type="submit">添加</button>
       </form>
 
-      <section class="toolbar" aria-label="筛选待办">
-        <button class="filter active" type="button" data-filter="all">全部</button>
-        <button class="filter" type="button" data-filter="active">未完成</button>
-        <button class="filter" type="button" data-filter="done">已完成</button>
-      </section>
+      <section class="control-panel" aria-label="筛选">
+        <div class="toolbar" aria-label="筛选待办">
+          <button class="filter active" type="button" data-filter="all">全部</button>
+          <button class="filter" type="button" data-filter="active">进行中</button>
+          <button class="filter" type="button" data-filter="done">已完成</button>
+        </div>
 
-      <section class="category-toolbar" aria-label="筛选分类">
-        <button class="category-filter active" type="button" data-category="all">全部分类</button>
+        <div class="category-toolbar" aria-label="筛选分类">
+          <button class="category-filter active" type="button" data-category="all">全部分类</button>
+        </div>
       </section>
 
       <section class="content">

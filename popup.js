@@ -12,6 +12,14 @@
   const todayText = document.querySelector("#todayText");
 
   const UNCATEGORIZED_FILTER = "__uncategorized__";
+  const UNCATEGORIZED_TONE = { ticket: "#fff9e8", tag: "#6a6255" };
+  const DECK_TONES = [
+    { ticket: "#fff9e8", tag: "#ff5a2f" },
+    { ticket: "#f0ffb4", tag: "#127c58" },
+    { ticket: "#e6f7ff", tag: "#1f9fb8" },
+    { ticket: "#ffe7dd", tag: "#c93419" },
+    { ticket: "#e9e7ff", tag: "#315bff" },
+  ];
 
   let todos = [];
   let currentFilter = "all";
@@ -191,11 +199,14 @@
     const item = document.createElement("li");
     item.className = `todo-item${todo.completed ? " done" : ""}`;
     item.dataset.id = todo.id;
+    const tone = getTodoTone(todo);
+    item.style.setProperty("--ticket-bg", tone.ticket);
+    item.style.setProperty("--tag-color", tone.tag);
 
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.checked = todo.completed;
-    checkbox.setAttribute("aria-label", `标记 ${todo.title}`);
+    checkbox.setAttribute("aria-label", todo.completed ? `标记 ${todo.title} 为进行中` : `标记 ${todo.title} 为已完成`);
 
     const content = document.createElement("div");
     content.className = "todo-content";
@@ -217,11 +228,13 @@
     editButton.type = "button";
     editButton.className = "edit";
     editButton.textContent = "编辑";
+    editButton.setAttribute("aria-label", `编辑 ${todo.title}`);
 
     const deleteButton = document.createElement("button");
     deleteButton.type = "button";
     deleteButton.className = "delete";
     deleteButton.textContent = "删除";
+    deleteButton.setAttribute("aria-label", `删除 ${todo.title}`);
 
     actions.append(editButton, deleteButton);
     item.append(checkbox, content, actions);
@@ -233,6 +246,20 @@
     }
 
     return item;
+  }
+
+  function getTodoTone(todo) {
+    if (!todo.category) {
+      return UNCATEGORIZED_TONE;
+    }
+
+    return DECK_TONES[hashText(todo.category) % DECK_TONES.length];
+  }
+
+  function hashText(text) {
+    return Array.from(text).reduce((hash, char) => {
+      return (hash * 31 + char.charCodeAt(0)) >>> 0;
+    }, 7);
   }
 
   function createEditRow(todo) {
