@@ -1,5 +1,7 @@
 # 简洁待办 Chrome 扩展
 
+[English README](README.en.md)
+
 一个打开就能用的待办事项小工具，风格是极简便签墙。
 
 ## 功能
