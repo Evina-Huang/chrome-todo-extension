@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>简洁待办</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="待办事项">
+      <header class="header">
+        <div>
+          <h1>待办事项</h1>
+          <p id="todayText" class="today"></p>
+        </div>
+      </header>
+
+      <form id="todoForm" class="add-form" autocomplete="off">
+        <label class="sr-only" for="todoInput">新增待办</label>
+        <input id="todoInput" type="text" maxlength="80" placeholder="添加一件要做的事" />
+        <label class="sr-only" for="categoryInput">分类</label>
+        <input id="categoryInput" type="text" maxlength="18" placeholder="分类（可不填）" list="categorySuggestions" />
+        <datalist id="categorySuggestions"></datalist>
+        <button type="submit">添加</button>
+      </form>
+
+      <section class="toolbar" aria-label="筛选待办">
+        <button class="filter active" type="button" data-filter="all">全部</button>
+        <button class="filter" type="button" data-filter="active">未完成</button>
+        <button class="filter" type="button" data-filter="done">已完成</button>
+      </section>
+
+      <section class="category-toolbar" aria-label="筛选分类">
+        <button class="category-filter active" type="button" data-category="all">全部分类</button>
+      </section>
+
+      <section class="content">
+        <p id="emptyState" class="empty-state">还没有待办。先添加一件最重要的小事。</p>
+        <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+      </section>
+
+      <footer class="footer">
+        <span id="countText">0 件待办</span>
+        <button id="clearDone" class="ghost" type="button">清理已完成</button>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

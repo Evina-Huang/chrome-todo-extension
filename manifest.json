@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "简洁待办",
+  "description": "一个轻量清晰的 Chrome 待办事项扩展。",
+  "version": "1.0.0",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "简洁待办",
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+}
