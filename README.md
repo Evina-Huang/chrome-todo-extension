@@ -1,4 +1,4 @@
-# todo Chrome 扩展 / todo Chrome Extension
+# Lightweight Todo Tool / 轻量化 Todo 工具
 
 一个打开就能用的待办事项小工具，风格是极简便签墙。
 
