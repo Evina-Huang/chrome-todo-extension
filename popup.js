@@ -145,15 +145,10 @@
   }
 
   function setTodayText() {
+    const today = new Date();
+
     if (isBoardPage) {
-      const monthDay = new Intl.DateTimeFormat("zh-CN", {
-        month: "numeric",
-        day: "numeric",
-      }).format(new Date());
-      const weekday = new Intl.DateTimeFormat("zh-CN", {
-        weekday: "short",
-      }).format(new Date());
-      todayText.textContent = `${monthDay}  ${weekday}`;
+      todayText.textContent = formatBoardDate(today);
       return;
     }
 
@@ -162,7 +157,80 @@
       day: "numeric",
       weekday: "long",
     });
-    todayText.textContent = formatter.format(new Date());
+    todayText.textContent = formatter.format(today);
+  }
+
+  function formatBoardDate(date) {
+    const year = date.getFullYear();
+    const month = padDateNumber(date.getMonth() + 1);
+    const day = padDateNumber(date.getDate());
+    const weekday = new Intl.DateTimeFormat("zh-CN", { weekday: "long" }).format(date);
+    return `${year} 年 ${month} 月 ${day} 日 ${weekday} ${formatLunarDate(date)}`;
+  }
+
+  function padDateNumber(value) {
+    return String(value).padStart(2, "0");
+  }
+
+  function formatLunarDate(date) {
+    try {
+      const parts = new Intl.DateTimeFormat("zh-CN-u-ca-chinese", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }).formatToParts(date);
+      const yearName = parts.find((part) => part.type === "yearName")?.value;
+      const month = parts.find((part) => part.type === "month")?.value;
+      const day = Number(parts.find((part) => part.type === "day")?.value);
+
+      if (yearName && month && Number.isFinite(day)) {
+        return `${yearName}年${formatLunarMonth(month)}月${formatLunarDay(day)}`;
+      }
+    } catch {
+      // Keep the new tab usable if the runtime lacks the Chinese calendar formatter.
+    }
+
+    return "";
+  }
+
+  function formatLunarMonth(value) {
+    return value.replace(/月$/, "");
+  }
+
+  function formatLunarDay(value) {
+    const days = [
+      "初一",
+      "初二",
+      "初三",
+      "初四",
+      "初五",
+      "初六",
+      "初七",
+      "初八",
+      "初九",
+      "初十",
+      "十一",
+      "十二",
+      "十三",
+      "十四",
+      "十五",
+      "十六",
+      "十七",
+      "十八",
+      "十九",
+      "二十",
+      "廿一",
+      "廿二",
+      "廿三",
+      "廿四",
+      "廿五",
+      "廿六",
+      "廿七",
+      "廿八",
+      "廿九",
+      "三十",
+    ];
+    return days[value - 1] || String(value);
   }
 
   async function saveAndRender() {

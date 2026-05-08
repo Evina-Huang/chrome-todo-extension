@@ -571,12 +571,12 @@ body.newtab-page {
 
 .newtab-app .header {
   display: grid;
-  min-height: 200px;
+  min-height: 104px;
   max-width: none;
   margin: 0;
   border: 0;
-  place-items: center;
-  padding: 0;
+  place-items: start center;
+  padding: 36px 0 0;
   text-align: center;
 }
 
@@ -600,11 +600,13 @@ body.newtab-page {
 }
 
 .newtab-app .today {
-  margin: 20px 0 0;
+  margin: 0;
   color: #8d8579;
   font-size: 16px;
   font-weight: 650;
-  letter-spacing: 0.04em;
+  letter-spacing: 0;
+  line-height: 1.45;
+  white-space: nowrap;
 }
 
 .newtab-app > .add-form,
@@ -989,11 +991,12 @@ body.newtab-page {
   }
 
   .newtab-app .header {
-    min-height: 190px;
+    min-height: 92px;
+    padding-top: 28px;
   }
 
-  .newtab-app .quote {
-    font-size: 21px;
+  .newtab-app .today {
+    white-space: normal;
   }
 
   .newtab-app .board-list {
