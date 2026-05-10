@@ -1,9 +1,10 @@
-# Lightweight Todo Tool / 轻量化 Todo 工具
+# Todo 便签墙
 
 一个打开就能用的待办事项小工具，风格是极简便签墙。
 
 ## 功能
 
+- 可作为普通网页直接打开使用
 - 添加待办事项
 - 自己填写分类，也可以不填
 - 不会预设分类，不填时会保持无分类
@@ -28,12 +29,21 @@
 
 如果希望固定在首页，加载扩展后打开一个新标签页即可看到待办页面。Chrome 可能会提示新标签页已被扩展更改，选择保留即可。
 
+## 网页版
+
+直接打开这个文件即可使用网页版：
+
+`/Users/evina/Evina-demo/chrome/index.html`
+
+网页版会把数据保存在当前浏览器的本地存储里，不需要服务器。
+
 ## English
 
-A lightweight todo extension designed as a clean sticky-note wall. It works as both a toolbar popup and a new tab page.
+Todo 便签墙 is a lightweight todo extension designed as a clean sticky-note wall. It works as a toolbar popup, a Chrome new tab page, and a standalone web page.
 
 ### Features
 
+- Can be opened directly as a standalone web page
 - Add todo items quickly
 - Add your own categories, or leave items uncategorized
 - No preset category setup is required
@@ -57,6 +67,14 @@ A lightweight todo extension designed as a clean sticky-note wall. It works as b
 After loading the extension, click the extension icon in the Chrome toolbar to use the popup todo list.
 
 To use it as your homepage-style board, open a new Chrome tab. If Chrome asks whether to keep the new tab page change, choose to keep it.
+
+### Web Version
+
+Open this file directly to use the standalone web version:
+
+`/Users/evina/Evina-demo/chrome/index.html`
+
+The web version saves data in the current browser's local storage and does not require a server.
 
 ### Privacy
 

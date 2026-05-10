@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Lightweight Todo Tool",
-  "description": "A lightweight Chrome todo tool.",
+  "name": "Todo 便签墙",
+  "description": "一个轻量的 Chrome 待办便签墙。",
   "version": "1.0.0",
   "permissions": ["storage"],
   "icons": {
@@ -11,7 +11,7 @@
     "128": "icons/icon-128.png"
   },
   "action": {
-    "default_title": "Lightweight Todo Tool",
+    "default_title": "Todo 便签墙",
     "default_icon": {
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
