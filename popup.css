@@ -695,10 +695,11 @@ body.newtab-page {
 .newtab-app .column-actions {
   position: absolute;
   right: 0;
-  bottom: -31px;
+  top: 50%;
   display: flex;
   gap: 4px;
   opacity: 0;
+  transform: translateY(-50%);
   transition: opacity 120ms ease;
 }
 
