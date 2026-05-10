@@ -23,7 +23,7 @@
 1. 打开 Chrome 的扩展程序页面：`chrome://extensions/`
 2. 打开右上角“开发者模式”
 3. 点击“加载已解压的扩展程序”
-4. 选择这个文件夹：`/Users/evina/Documents/Codex/2026-04-30/chrome`
+4. 选择这个文件夹：`/Users/evina/Evina-demo/chrome`
 
 加载完成后，点击 Chrome 工具栏里的扩展图标即可使用。
 
@@ -39,7 +39,7 @@
 
 ## English
 
-Todo 便签墙 is a lightweight todo extension designed as a clean sticky-note wall. It works as a toolbar popup, a Chrome new tab page, and a standalone web page.
+Todo Sticky Wall is a lightweight todo extension designed as a clean sticky-note wall. It works as a toolbar popup, a Chrome new tab page, and a standalone web page.
 
 ### Features
 
@@ -62,7 +62,7 @@ Todo 便签墙 is a lightweight todo extension designed as a clean sticky-note w
 1. Open Chrome extensions: `chrome://extensions/`
 2. Turn on "Developer mode" in the top-right corner.
 3. Click "Load unpacked".
-4. Select this folder: `/Users/evina/Documents/Codex/2026-04-30/chrome`
+4. Select this folder: `/Users/evina/Evina-demo/chrome`
 
 After loading the extension, click the extension icon in the Chrome toolbar to use the popup todo list.
 
